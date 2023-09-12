@@ -3,6 +3,19 @@
     "name":"BasicExtensions",
     "description":"Initial steps for chrome extension creation",
     "version":"1.0",
+   "permissions": [
+      "activeTab",
+      "tabs",
+      "storage"
+   ],
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts":[{
+      "matches":["<all_urls>"],
+      "js":["content_scripts.js"]
+     }
+     ],
     "action":{
        "default_popup":"index.html",
        "default_icon":"hello_extensions.png"
